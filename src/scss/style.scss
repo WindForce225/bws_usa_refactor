@@ -1,0 +1,226 @@
+// миксин для подключения файлов шрифтов
+
+@mixin font($font_name, $file_name, $weight, $style){
+	@font-face {
+		font-family: $font-name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+// подключение шрифтов
+@import "fonts.scss";
+
+// переменные для проекта
+$mainorange: #fc9d54;
+$white:#fff;
+
+// общие стили для документа
+*, *:after, *:before{
+	margin: 0;
+	padding: 0;
+	border:0;
+	box-sizing: border-box;
+}
+html,body{
+	height: 100%;
+	background-color: #fff;
+	font-family: 'Exo 2', sans-serif;
+}
+
+// стили слайдера в header
+.slider{
+	position: relative;
+	img{
+		max-width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center
+	}
+
+	/* Слайдер */
+	.slick-slider{}
+	/* Слайдер запущен */
+	.slick-slider.slick-initialized{}
+	/* Слайдер с точками */
+	.slick-slider.slick-dotted{}
+	/* Ограничивающая оболочка */
+	.slick-list {
+		overflow: hidden;
+	}
+	/* Лента слайдов */
+	.slick-track{
+		display: flex;
+	}
+	/* Слайд */
+	.slick-slide{
+		outline: none;
+	}
+	/* Слайд активный (показывается) */
+	.slick-slide.slick-active{}
+	/* Слайд основной */
+	.slick-slide.slick-current{}
+	/* Слайд по центру */
+	.slick-slide.slick-center{}
+	/* Клонированный слайд */
+	.slick-slide.slick-cloned{}
+	/* Стрелка */
+	.slick-arrow{}
+	/* Стрелка влево */
+	.slick-arrow.slick-prev{
+	}
+	/* Стрелка вправо */
+	.slick-arrow.slick-next{
+	}
+	/* Стрелка не активная */
+	.slick-arrow.slick-disabled{}
+	/* Точки (булиты) */
+	.slick-dots{
+		display:flex;
+		align-items: center;
+		justify-content: center;
+		position:absolute;
+		top:85%;
+		bottom: 0;
+		left:0;
+		right: 0;
+		margin: auto;
+	}
+	.slick-dots li{
+		list-style:none;
+		margin: 0 5px
+	}
+	/* Активная точка */
+	.slick-dots li.slick-active button{
+		background-color: $white;
+	}
+	/* Элемент точки */
+	.slick-dots li button{
+		font-size: 0;
+		width: 10px;
+		height: 10px;
+		background-color: #827d7f;
+		border-radius:50%;
+
+	}
+}
+
+// Стили для header
+.header{
+	position:relative;
+
+	.container{
+		max-width:1560px;
+		width: 100%;
+		margin: 0 auto;
+		display:flex;
+		justify-content:space-between;
+		position:absolute;
+		top:90px;
+		left:0;
+		right:0;
+
+		&__logotip{
+
+		}
+
+		&__nav-menu{
+
+			ul{
+				display:flex;
+				list-style:none;
+			}
+
+			ul li{
+				padding: 9px 21px;
+				
+				&:hover{
+					background-color: $mainorange;
+				}
+			}
+
+			ul li a{
+				text-decoration: none;
+				color: #fff;
+				font-style: light;
+				font-size:14px;
+			}
+		}
+
+		&__request-block{
+
+			p{
+				margin-left: 10px;
+			}
+			a{
+				color:$white;
+				font-size:14px;
+				font-style:light;
+				text-decoration: none;
+				margin-left: 10px;
+
+				&:hover{
+					color:$mainorange;
+				}
+			}
+			.skype-phone{
+				margin-bottom: 10px;
+				display:flex;
+				color:$white;
+				font-size:14px;
+				font-style:light;
+
+				img{
+				margin-left:10px;
+				}
+			}
+			.lang{
+				margin:10px 0; 
+				display:flex;
+				color:$white;
+				text-transform: uppercase;
+				font-size:14px;
+				img{
+				margin-left:10px;
+				}
+
+				.active-lang{
+					color:$mainorange;
+				}
+			}
+			.request-btn{
+				margin:10px 0;
+				display:flex;
+				align-items:center;
+				justify-content:space-around;
+				background-color:$mainorange;
+				padding:10px;
+				color:$white;
+				text-transform: uppercase;
+				font-size:14px;
+				img{
+					margin-left:10px;
+				}
+			}
+			.search-field{
+				position:relative;
+				margin:10px 0;
+
+				input{
+					padding:15px 0 15px 5px;
+					width:100%;
+					border:1px solid $white;
+					background-color: rgba($white, 0.3);
+					color:$white;
+				}
+				img{
+					position:absolute;
+					top:7px;
+					right:17px;
+				}
+			}
+		}
+	}
+
+}
