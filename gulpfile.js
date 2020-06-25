@@ -168,8 +168,8 @@ function css(){
 			)
 		.pipe(
 			autoprefixer({
-				overrideBrowserlist:["last 5 versions"],
-				cascade: true
+				browsers:["last 5 versions"],
+				cascade: false
 			})
 			)
 		.pipe(webpcss())

@@ -1,16 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, intial-scale=1.0">
-	<link rel="stylesheet" href="css/style.min.css">
-	<title>Bauart Web Solution</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Bauart Web Solution</title>
 </head>
+
 <body>
-	@@include('_header.html')
-	<main class="main">
-		
-	</main>
-	@@include('_scripts.html')
+    @@include('_header.html')
+    <main class="main">
+        <div class="main__head-whoweare">
+            <h2>who we are</h2>
+            <p> Web Development Company Bauart Web Solutions was founded in Russia, Siberia in 2009.
+                Now we have become one of the market leaders in our region. Our company is only discovering the American market now and we are really ready to work. We belong to the heart of the digital world. Our strengths are competence, diligence and creativity.
+            </p>
+        </div>
+        <div class="main__focused-approach">
+            <h2>focused approach</h2>
+            <div class="approach-cards">
+                    <div class="approach-cards__item">
+                        <h3>Mobile App Development</h3>
+                        <div class="flex">
+                            <p>Android</p>
+                            <p>iPhone</p>
+                            <p>Cross platform</p>
+                        </div>
+                        <img src="img/main-card/mobile-develop.png" alt="mobile-develop">
+                    </div>
+                    <div class="approach-cards__item">
+                        <h3>Web Design and Development</h3>
+                        <div class="flex">
+                            <p>PHP</p>
+                            <p>Yii</p>
+                            <p>Laravel</p>
+                            <p>Bitrix</p>
+                        </div>
+                        <img src="img/main-card/backend.png" alt="backend">
+                    </div>
+                    <div class="approach-cards__item">
+                        <h3>SEO Services</h3>
+                        <div class="flex">
+                            <p>Google</p>
+                            <p>Yandex</p>
+                        </div>
+                        <img src="img/main-card/seo.png" alt="seo">
+                    </div>
+            </div>
+        </div>
+        <div class="main__video-block">
+        	<h2>job seekers video</h2>
+        	<div class="body-video">
+        		<img src="img/Titlevideo.png" alt="video">
+        		<img class="play-btn" src="img/play-button.png" alt="play">
+        	</div>
+        </div>
+    </main>
+    @@include('_scripts.html')
 </body>
+
 </html>
