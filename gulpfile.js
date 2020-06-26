@@ -168,7 +168,7 @@ function css(){
 			)
 		.pipe(
 			autoprefixer({
-				browsers:["last 5 versions"],
+				overrideBrowserslist:["last 3 versions"],
 				cascade: false
 			})
 			)
