@@ -35,9 +35,15 @@
     flex-direction: column
 }
 
+
 .a-orange-btn {
     background-color: $mainorange;
     padding: 25px 90px;
+    transition: 0.5s;
+
+    &:hover {
+        padding: 30px 95px;
+    }
 }
 
 .container-min {
@@ -81,6 +87,7 @@ body {
     /* Лента слайдов */
     .slick-track {
         display: flex;
+        height: 750px;
     }
 
     /* Слайд */
@@ -220,7 +227,6 @@ button {
             ul li a {
                 text-decoration: none;
                 color: #fff;
-                font-style: light;
                 font-size: 14px;
             }
 
@@ -263,7 +269,6 @@ button {
                     h3 {
                         font-size: 24px;
                         color: $greycolor;
-                        font-style: light;
                         font-weight: 100;
                         text-transform: uppercase;
                         margin-bottom: 30px;
@@ -285,7 +290,6 @@ button {
                     ul li a {
                         text-decoration: none;
                         color: $greycolor;
-                        font-style: light;
                         font-size: 14px;
 
                         &:hover {
@@ -323,7 +327,6 @@ button {
                         span a {
                             text-decoration: none;
                             color: $greycolor;
-                            font-style: light;
                             font-size: 14px;
                             margin-left: 5px;
                         }
@@ -331,7 +334,6 @@ button {
                         .writetous {
                             margin: 10px 0;
                             cursor: pointer;
-                            font-style: light;
                             display: flex;
                             justify-content: flex-start;
                             font-size: 14px;
@@ -350,7 +352,6 @@ button {
                         }
 
                         .letsworktogether {
-                            font-style: light;
                             font-size: 14px;
                             cursor: pointer;
                             color: #fff;
@@ -394,7 +395,6 @@ button {
             a {
                 color: $white;
                 font-size: 14px;
-                font-style: light;
                 text-decoration: none;
                 margin-left: 10px;
 
@@ -408,7 +408,6 @@ button {
                 display: flex;
                 color: $white;
                 font-size: 14px;
-                font-style: light;
 
                 img {
                     margin-left: 10px;
@@ -442,6 +441,11 @@ button {
                 color: $white;
                 text-transform: uppercase;
                 font-size: 14px;
+                transition: 0.5s;
+
+                &:hover {
+                    padding: 15px;
+                }
 
                 img {
                     margin-left: 10px;
@@ -759,6 +763,7 @@ button {
                     box-shadow: 4px 14px 27px rgba(0, 0, 0, 0.03);
                     border: 1px solid #ececec;
                     background-color: $mainorange;
+                    cursor: pointer;
                     color: $white;
                     font-size: 16px;
                     font-weight: 500;
@@ -768,7 +773,13 @@ button {
                     max-width: 420px;
                     width: 100%;
                     margin: 20px auto 70px auto;
+                    transition: 0.5s;
+
+                    &:hover {
+                        padding: 35px;
+                    }
                 }
+
 
                 h4 {
                     font-size: 18px;
@@ -1012,6 +1023,15 @@ button {
         padding: 50px 0;
         background-color: $greycolor4;
 
+        svg {
+            fill: white;
+            cursor: pointer;
+
+            &:hover {
+                fill: $mainorange;
+            }
+        }
+
         .footer-block {
             display: flex;
             justify-content: center;
@@ -1156,257 +1176,300 @@ button {
 }
 
 // стили модального окна
-.modal-request-block {
-    display: none;
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    top: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease 0s;
 
-    .request-block {
-        padding: 40px 120px;
-        align-items: center;
-        box-shadow: 4px 14px 27px rgba(0, 0, 0, 0.15);
+    &__area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
 
-        @media only screen and(max-width: 1023px) {
-            flex-direction: column;
-            padding: 40px 10px;
-        }
+    &__close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
 
-        form {
-            width: 100%;
-        }
+    &__content {
+        margin-top: 30px;
+        overflow-y: auto;
 
-        .allblock-request {
-            width: 100%;
-            display: flex;
+        .request-block {
+            padding: 40px;
+            align-items: center;
 
+            position: relative;
+            background-color: $white;
+            box-shadow: 4px 14px 27px rgba(0, 0, 0, 0.15);
+            transition: all 0.5s ease 0s;
 
             @media only screen and(max-width: 1023px) {
                 flex-direction: column;
-                align-items: center;
+                padding: 40px 10px;
             }
 
-        }
-
-        .mb {
-            margin-bottom: 20px;
-        }
-
-        input {
-            box-shadow: 4px 14px 27px rgba(0, 0, 0, 0.03);
-            border: 1px solid #ececec;
-            padding: 22px;
-            width: 100%;
-
-            @media only screen and(max-width: 414px) {
-                max-width: 370px;
-            }
-
-            @media only screen and(max-width: 370px) {
-                max-width: 320px;
-            }
-        }
-
-        textarea {
-            padding: 22px;
-            width: 100%;
-            border: 1px solid #ececec;
-
-            @media only screen and(max-width: 414px) {
-                max-width: 370px;
-            }
-
-            @media only screen and(max-width: 370px) {
-                max-width: 320px;
-            }
-        }
-
-        h2 {
-            font-size: 24px;
-            font-weight: 400;
-            text-transform: uppercase;
-            color: $greycolor3;
-            margin: 35px 0;
-        }
-
-        p {
-            font-size: 18px;
-            font-weight: 300;
-            color: $greycolor3;
-            margin-bottom: 40px;
-        }
-
-        &__left {
-            margin-right: 35px;
-            width: 50%;
-
-
-            @media only screen and(max-width: 1023px) {
-                margin-right: 0px;
-            }
-
-            @media only screen and(max-width: 768px) {
-                margin-right: 0px;
-                width: 100%;
-            }
-        }
-
-        &__right {
-            width: 50%;
-            margin-left: 35px;
-            color: $greycolor3;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-
-            @media only screen and(max-width: 1023px) {
-                margin-left: 0px;
-            }
-
-            @media only screen and(max-width: 768px) {
-                margin-right: 0px;
+            form {
                 width: 100%;
             }
 
-            .check-adwise {
+            .allblock-request {
+                width: 100%;
                 display: flex;
 
-                input[type=checkbox] {
-                    width: 10%;
+
+                @media only screen and(max-width: 1023px) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+            }
+
+            .mb {
+                margin-bottom: 20px;
+            }
+
+            input {
+                box-shadow: 4px 14px 27px rgba(0, 0, 0, 0.03);
+                border: 1px solid #ececec;
+                padding: 22px;
+                width: 100%;
+
+                @media only screen and(max-width: 414px) {
+                    max-width: 370px;
+                }
+
+                @media only screen and(max-width: 370px) {
+                    max-width: 320px;
                 }
             }
 
-            .submit-btn {
-                box-shadow: 4px 14px 27px rgba(0, 0, 0, 0.03);
-                border: 1px solid #ececec;
-                background-color: $mainorange;
-                color: $white;
-                font-size: 16px;
-                font-weight: 500;
-                text-transform: uppercase;
-                text-align: center;
-                padding: 30px;
-                max-width: 420px;
+            textarea {
+                padding: 22px;
                 width: 100%;
-                margin: 20px auto 70px auto;
+                border: 1px solid #ececec;
+
+                @media only screen and(max-width: 414px) {
+                    max-width: 370px;
+                }
+
+                @media only screen and(max-width: 370px) {
+                    max-width: 320px;
+                }
             }
 
-            h4 {
+            h2 {
+                font-size: 24px;
+                font-weight: 400;
+                text-transform: uppercase;
+                color: $greycolor3;
+                margin: 5px 0;
+            }
+
+            p {
                 font-size: 18px;
                 font-weight: 300;
                 color: $greycolor3;
-                margin: 50px 0 20px 0;
-
+                margin-bottom: 40px;
             }
 
-            .radio-btn {
-                position: relative;
-                width: 100%;
-                padding: 30px 0;
-                justify-content: space-between;
+            &__left {
+                margin-right: 35px;
+                width: 50%;
 
 
-                .line-abs {
-                    position: absolute;
-                    left: 0;
-                    top: 14%;
-                    left: 6%;
-                    z-index: -2;
-                    width: 86%;
+                @media only screen and(max-width: 1023px) {
+                    margin-right: 0px;
+                }
 
+                @media only screen and(max-width: 768px) {
+                    margin-right: 0px;
+                    width: 100%;
+                }
+            }
 
+            &__right {
+                width: 50%;
+                margin-left: 35px;
+                color: $greycolor3;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
 
-                    @media only screen and(max-width: 768px) {
-                        width: 82%;
+                @media only screen and(max-width: 1023px) {
+                    margin-left: 0px;
+                }
+
+                @media only screen and(max-width: 768px) {
+                    margin-right: 0px;
+                    width: 100%;
+                }
+
+                .check-adwise {
+                    display: flex;
+
+                    input[type=checkbox] {
+                        width: 10%;
                     }
+                }
+
+                .submit-btn {
+                    box-shadow: 4px 14px 27px rgba(0, 0, 0, 0.03);
+                    border: 1px solid #ececec;
+                    background-color: $mainorange;
+                    color: $white;
+                    font-size: 16px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    text-align: center;
+                    padding: 30px;
+                    max-width: 420px;
+                    width: 100%;
+                    margin: 20px auto 70px auto;
+                    transition: 0.5s;
+
+                    &:hover {
+                        padding: 35px;
+                    }
+                }
+
+                h4 {
+                    font-size: 18px;
+                    font-weight: 300;
+                    color: $greycolor3;
+                    margin: 50px 0 20px 0;
 
                 }
 
-                &__item {
-                    margin-right: 5px;
+                .radio-btn {
+                    position: relative;
+                    z-index: 2;
+                    width: 100%;
+                    padding: 30px 0;
+                    justify-content: space-between;
 
-                    .rd-btn {
-                        display: none;
-                        z-index: -1;
-                        opacity: 0;
 
-                    }
-
-                    .rd-btn+label {
-                        position: relative;
-                        cursor: pointer;
-                        font-size: 15px;
-                        color: $greycolor3;
-
-                        @media only screen and(max-width: 1240px) {
-                            font-size: 14px;
-                        }
-
-                        @media only screen and(max-width: 1114px) {
-                            font-size: 13px;
-                        }
-
-                        @media only screen and(max-width: 450px) {
-                            font-size: 12px;
-                        }
-
-                        @media only screen and(max-width: 320px) {
-                            font-size: 10px;
-                        }
-
-                    }
-
-                    .rd-btn+label:before {
-                        content: '';
+                    .line-abs {
                         position: absolute;
-                        width: 20px;
-                        height: 20px;
-                        background-color: #dedede;
-                        border: 0px;
-                        outline: none;
-                        border-radius: 50%;
-                        top: -55px;
-                        bottom: 0;
                         left: 0;
-                        right: 0;
-                        margin: auto;
+                        top: 14%;
+                        left: 6%;
+                        z-index: -1;
+                        width: 86%;
 
+                        @media only screen and(max-width: 768px) {
+                            width: 82%;
+                        }
 
                     }
 
-                    .rd-btn+label:after {
-                        content: '';
-                        position: absolute;
-                        width: 8px;
-                        height: 8px;
-                        background-color: #ff9545;
-                        border: 0px solid #838383;
-                        outline: none;
-                        border-radius: 50%;
-                        opacity: 0;
-                        -webkit-transition: .2s;
-                        -o-transition: .2s;
-                        transition: .2s;
-                        top: -55px;
-                        left: 0px;
-                        right: 0px;
-                        bottom: 0px;
-                        margin: auto;
+                    &__item {
+                        margin-right: 5px;
+
+                        .rd-btn {
+                            display: none;
+                            z-index: -1;
+                            opacity: 0;
+
+                        }
+
+                        .rd-btn+label {
+                            position: relative;
+                            cursor: pointer;
+                            font-size: 15px;
+                            color: $greycolor3;
+
+                            @media only screen and(max-width: 1240px) {
+                                font-size: 14px;
+                            }
+
+                            @media only screen and(max-width: 1114px) {
+                                font-size: 13px;
+                            }
+
+                            @media only screen and(max-width: 450px) {
+                                font-size: 12px;
+                            }
+
+                            @media only screen and(max-width: 320px) {
+                                font-size: 10px;
+                            }
+
+                        }
+
+                        .rd-btn+label:before {
+                            content: '';
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            background-color: #dedede;
+                            border: 0px;
+                            outline: none;
+                            border-radius: 50%;
+                            top: -55px;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+
+
+                        }
+
+                        .rd-btn+label:after {
+                            content: '';
+                            position: absolute;
+                            width: 8px;
+                            height: 8px;
+                            background-color: #ff9545;
+                            border: 0px solid #838383;
+                            outline: none;
+                            border-radius: 50%;
+                            opacity: 0;
+                            -webkit-transition: .2s;
+                            -o-transition: .2s;
+                            transition: .2s;
+                            top: -55px;
+                            left: 0px;
+                            right: 0px;
+                            bottom: 0px;
+                            margin: auto;
+                        }
+
+                        .rd-btn:checked+label:before {
+                            border: 3px solid #ff9545;
+                            background-color: white;
+                        }
+
+                        .rd-btn:checked+label:after {
+                            opacity: 1;
+                        }
                     }
 
-                    .rd-btn:checked+label:before {
-                        border: 3px solid #ff9545;
-                        background-color: white;
-                    }
-
-                    .rd-btn:checked+label:after {
-                        opacity: 1;
-                    }
                 }
-
             }
+
+
         }
+    }
 
 
+    &:target {
+        opacity: 1;
+        visibility: visible;
     }
 }
+
 
 // стили слайдера отзывов
 .slider-review {

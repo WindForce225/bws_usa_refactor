@@ -1,53 +1,74 @@
-        <div class="modal-request-block">
-            <div class="request-block container-min flex-column">
-                <h2>Connect With Experts</h2>
-                <p>We are happy to answer your question and take your App to a next level of excellence.</p>
-                <form action="post">
-                    <div class="allblock-request">
-                        <div class="request-block__left flex-column">
-                            <input class="mb" type="text" id="name" placeholder="Full name" required="">
-                            <input class="mb" type="email" id="email" placeholder="Email" required="">
-                            <input class="mb" type="phone" id="phone" placeholder="Phone" required="">
-                            <input class="mb" type="text" id="interested" placeholder="I'm interested" required="">
-                        </div>
-                        <div class="request-block__right">
-                            <textarea name="comment" placeholder="Tell me about your project" id="comment" cols="50" rows="7"></textarea>
-                            <h4>Project budget</h4>
-                            <div class="radio-btn flex">
-                                <div class="radio-btn__item flex-column">
-                                    <input class="rd-btn" type="radio" name="radio[]" id="btn1" value="Under 10k">
-                                    <label for="btn1">Under 10k</label>
+        <div id="popup" class="popup">
+            <a href="#body" class="popup__area"></a>
+            <div id="body" class="popup__body">
+                <div class="popup__content">
+                    <div class="request-block container-min flex-column">
+                        <a href="#body" class="popup__close">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.4948 10L19.478 3.01684C19.8094 2.68601 19.9958 2.23707 19.9962 1.76879C19.9966 1.3005 19.811 0.851233 19.4802 0.519814C19.1494 0.188395 18.7004 0.00197318 18.2321 0.00155962C17.7638 0.00114607 17.3146 0.186774 16.9832 0.517609L10 7.50077L3.01684 0.517609C2.68542 0.18619 2.23592 0 1.76723 0C1.29853 0 0.849028 0.18619 0.517609 0.517609C0.18619 0.849028 0 1.29853 0 1.76723C0 2.23592 0.18619 2.68542 0.517609 3.01684L7.50077 10L0.517609 16.9832C0.18619 17.3146 0 17.7641 0 18.2328C0 18.7015 0.18619 19.151 0.517609 19.4824C0.849028 19.8138 1.29853 20 1.76723 20C2.23592 20 2.68542 19.8138 3.01684 19.4824L10 12.4992L16.9832 19.4824C17.3146 19.8138 17.7641 20 18.2328 20C18.7015 20 19.151 19.8138 19.4824 19.4824C19.8138 19.151 20 18.7015 20 18.2328C20 17.7641 19.8138 17.3146 19.4824 16.9832L12.4948 10Z"
+                                    fill="#767676" />
+                            </svg>
+                        </a>
+                        <h2>Connect With Experts</h2>
+                        <p>We are happy to answer your question and take your App to a next level of excellence.</p>
+                        <form action="post">
+                            <div class="allblock-request">
+                                <div class="request-block__left flex-column">
+                                    <input class="mb" type="text" id="name" placeholder="Full name" required="">
+                                    <input class="mb" type="email" id="email" placeholder="Email" required="">
+                                    <input class="mb" type="phone" id="phone" placeholder="Phone" required="">
+                                    <input class="mb" type="text" id="interested" placeholder="I'm interested"
+                                        required="">
                                 </div>
-                                <div class="radio-btn__item flex-column">
-                                    <input class="rd-btn" type="radio" name="radio[]" id="btn2" value="10k - 25k">
-                                    <label for="btn2">10k - 25k</label>
+                                <div class="request-block__right">
+                                    <textarea name="comment" placeholder="Tell me about your project" id="comment"
+                                        cols="50" rows="7"></textarea>
+                                    <h4>Project budget</h4>
+                                    <div class="radio-btn flex">
+                                        <div class="radio-btn__item flex-column">
+                                            <input class="rd-btn" type="radio" name="radio1[]" id="btn12"
+                                                value="Under 10k">
+                                            <label for="btn12">Under 10k</label>
+                                        </div>
+                                        <div class="radio-btn__item flex-column">
+                                            <input class="rd-btn" type="radio" name="radio1[]" id="btn22"
+                                                value="10k - 25k">
+                                            <label for="btn22">10k - 25k</label>
+                                        </div>
+                                        <div class="radio-btn__item flex-column">
+                                            <input class="rd-btn" type="radio" name="radio1[]" id="btn32"
+                                                value="25k - 50kk">
+                                            <label for="btn32">25k - 50k</label>
+                                        </div>
+                                        <div class="radio-btn__item flex-column">
+                                            <input class="rd-btn" type="radio" name="radio1[]" id="btn42"
+                                                value="50k - 75k">
+                                            <label for="btn42">50k - 75k</label>
+                                        </div>
+                                        <div class="radio-btn__item flex-column">
+                                            <input class="rd-btn" type="radio" name="radio1[]" id="btn52"
+                                                value="75k - 100k">
+                                            <label for="btn52">75k - 100k</label>
+                                        </div>
+                                        <div class="radio-btn__item flex-column">
+                                            <input class="rd-btn" type="radio" name="radio1[]" id="btn62"
+                                                value="Over 100k">
+                                            <label for="btn62">Over 100k</label>
+                                        </div>
+                                        <img class="line-abs" src="img/stic.png" alt="stic">
+                                    </div>
+                                    <div class="check-adwise">
+                                        <input type="checkbox" id="check" name="check">
+                                        <p>
+                                            I wish to receive occasional newsletters and emails from BWS</p>
+                                    </div>
+                                    <input class="submit-btn hover1" type="submit" value="submit">
                                 </div>
-                                <div class="radio-btn__item flex-column">
-                                    <input class="rd-btn" type="radio" name="radio[]" id="btn3" value="25k - 50kk">
-                                    <label for="btn3">25k - 50k</label>
-                                </div>
-                                <div class="radio-btn__item flex-column">
-                                    <input class="rd-btn" type="radio" name="radio[]" id="btn4" value="50k - 75k">
-                                    <label for="btn4">50k - 75k</label>
-                                </div>
-                                <div class="radio-btn__item flex-column">
-                                    <input class="rd-btn" type="radio" name="radio[]" id="btn5" value="75k - 100k">
-                                    <label for="btn5">75k - 100k</label>
-                                </div>
-                                <div class="radio-btn__item flex-column">
-                                    <input class="rd-btn" type="radio" name="radio[]" id="btn6" value="Over 100k">
-                                    <label for="btn6">Over 100k</label>
-                                </div>
-                                <img class="line-abs" src="img/stic.png" alt="stic">
                             </div>
-                            <div class="check-adwise">
-                                <input type="checkbox" id="check" name="check">
-                                <p>
-                                    I wish to receive occasional newsletters and emails from BWS</p>
-                            </div>
-                            <input class="submit-btn" type="submit" value="submit">
-                        </div>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
