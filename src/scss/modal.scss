@@ -1,10 +1,41 @@
-    .modal-request-bloc {
-        margin: 110px 0;
+// стили модального окна
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    top: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease 0s;
+    overflow-y: auto;
+
+    &__area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    &__close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    &__content {
+        margin-top: 30px;
 
         .request-block {
-            padding: 40px 120px;
+            padding: 40px;
             align-items: center;
+            position: relative;
+            background-color: $white;
             box-shadow: 4px 14px 27px rgba(0, 0, 0, 0.15);
+            transition: all 0.5s ease 0s;
 
             @media only screen and(max-width: 1023px) {
                 flex-direction: column;
@@ -65,7 +96,7 @@
                 font-weight: 400;
                 text-transform: uppercase;
                 color: $greycolor3;
-                margin: 35px 0;
+                margin: 5px 0;
             }
 
             p {
@@ -111,7 +142,9 @@
                     display: flex;
 
                     input[type=checkbox] {
-                        width: 10%;
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 10px;
                     }
                 }
 
@@ -127,19 +160,25 @@
                     padding: 30px;
                     max-width: 420px;
                     width: 100%;
-                    margin: 20px auto 70px auto;
+                    margin: 20px auto 20px auto;
+                    transition: 0.5s;
+
+                    &:hover {
+                        padding: 35px;
+                    }
                 }
 
                 h4 {
                     font-size: 18px;
                     font-weight: 300;
                     color: $greycolor3;
-                    margin: 50px 0 20px 0;
+                    margin: 10px 0 20px 0;
 
                 }
 
                 .radio-btn {
                     position: relative;
+                    z-index: 2;
                     width: 100%;
                     padding: 30px 0;
                     justify-content: space-between;
@@ -150,10 +189,8 @@
                         left: 0;
                         top: 14%;
                         left: 6%;
-                        z-index: -2;
+                        z-index: -1;
                         width: 86%;
-
-
 
                         @media only screen and(max-width: 768px) {
                             width: 82%;
@@ -249,3 +286,10 @@
 
         }
     }
+
+
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+}

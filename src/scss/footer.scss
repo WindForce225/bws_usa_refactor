@@ -1,0 +1,157 @@
+// стили футера
+.footer {
+    &__body {
+        padding: 50px 0;
+        background-color: $greycolor4;
+
+        svg {
+            fill: white;
+            cursor: pointer;
+
+            &:hover {
+                fill: $mainorange;
+            }
+        }
+
+        .footer-block {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            &__links {
+                ul {
+                    list-style: none;
+                    display: flex;
+
+                    @media only screen and(max-width: 1080px) {
+                        flex-direction: column;
+                    }
+                }
+
+                ul li {
+                    margin: 0 15px;
+
+                    @media only screen and(max-width: 1080px) {
+                        margin: 10px 15px;
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+
+                    color: $color1;
+                }
+            }
+
+            &__contacts {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .contacts-svg {
+                    margin-top: 50px;
+
+                    .contacts-links {
+                        margin: 10px 0;
+                    }
+                }
+
+                p {
+                    color: $white;
+                }
+
+                svg {
+                    margin: 0 5px;
+                }
+
+                a {
+                    color: $white;
+                    text-decoration: none;
+                    font-size: 14px;
+                }
+            }
+
+            &__clocks,
+            .footersectionright {
+                display: flex;
+                width: 400px;
+
+                @media only screen and(max-width: 370px) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+
+                .clock1block {
+                    width: 50%;
+                    height: 145px;
+                    margin: 0px 10px;
+                    text-align: center;
+
+                    @media only screen and(max-width: 370px) {
+                        margin: 50px 10px;
+                    }
+                }
+
+                .clock1block p {
+                    font-size: 12px;
+                    width: 100%;
+                    margin: 0px auto;
+                    color: $white;
+                }
+
+                #clock,
+                #clock2 {
+                    position: relative;
+                    width: 145px;
+                    height: 145px;
+                    margin: 10px auto;
+                    background: url(../img/clock/clockback.png) no-repeat;
+                    background-size: 100% 100%;
+                    list-style: none;
+                    padding: 0;
+                }
+
+                #min,
+                #hour,
+                #hour2,
+                #min2 {
+                    position: relative;
+
+                }
+
+                #min,
+                #min2 {
+                    background: url(../img/clock/secondarrow.png) no-repeat;
+                    z-index: 2;
+                    width: 3px;
+                    height: 110px;
+                    left: 70px;
+                    bottom: 50px;
+                }
+
+                #hour,
+                #hour2 {
+                    background: url(../img/clock/hourarrow.png) no-repeat;
+                    z-index: 1;
+                    top: 40px;
+                    width: 4px;
+                    height: 70px;
+                    left: 70px;
+                }
+
+            }
+        }
+    }
+
+    &__copyright {
+        background-color: $color2;
+        color: $white;
+
+        .links-block {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+    }
+}

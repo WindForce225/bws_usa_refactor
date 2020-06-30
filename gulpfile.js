@@ -11,6 +11,8 @@ let path = {
 		js: project_folder + "/js/",
 		img: project_folder + "/img/",
 		fonts: project_folder + "/fonts/",
+		video: project_folder + "/video/",
+		template: project_folder + "/template/"
 	},
 	src:{
 		html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
@@ -19,6 +21,8 @@ let path = {
 		js2: source_folder + "/js/lib/*.js",
 		img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
 		fonts: source_folder + "/fonts/*.ttf",
+		video: source_folder + "/video/*.mp4",
+		template: [source_folder + "/template/*.html", "!" + source_folder + "/template/_*.html"] 
 	},
 	watch:{
 		html: source_folder + "/**/*.html",
@@ -26,6 +30,8 @@ let path = {
 		js: source_folder + "/js/**/*.js",
 		img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
 		fonts: source_folder + "/fonts/*.ttf",
+		video: source_folder + "/video/*.mp4",
+		template: source_folder + "/template/*.html"
 	},
 	clean: "./" + project_folder + "/"
 }
@@ -72,7 +78,7 @@ function browserSync(params){
 	})
 }
 
-// функция сборки html файла
+// функция сборки img файла
 function images(){
 	return src(path.src.img)
 		.pipe(webp({
@@ -93,12 +99,30 @@ function images(){
 		
 }
 
+// функция сборки video файла
+function video(){
+	return src(path.src.video)
+		.pipe(dest(path.build.video))
+		.pipe(browsersync.stream())
+		
+}
+
 // функция сборки html файла
 function html(){
 	return src(path.src.html)
 		.pipe(fileinclude())
 		.pipe(webphtml())
 		.pipe(dest(path.build.html))
+		.pipe(browsersync.stream())
+		
+}
+
+// функция сборки html-страницы файла
+function template(){
+	return src(path.src.template)
+		.pipe(fileinclude())
+		.pipe(webphtml())
+		.pipe(dest(path.build.template))
 		.pipe(browsersync.stream())
 		
 }
@@ -223,9 +247,11 @@ function clean(params){
 	return del(path.clean);
 }
 
-let build = gulp.series(clean, gulp.parallel(js,js2, css, fonts, html, images), fontsStyle);
+let build = gulp.series(clean, gulp.parallel(js,js2,video, css, fonts, html,template, images), fontsStyle);
 let watch = gulp.parallel( build, watchFiles, browserSync);
 
+exports.template = template;
+exports.video = video;
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
