@@ -237,6 +237,7 @@ function cb(){
 // функция слежки за измненениями файлов
 function watchFiles(params){
 	gulp.watch([path.watch.html], html);
+	gulp.watch([path.watch.template], html);
 	gulp.watch([path.watch.css], css);
 	gulp.watch([path.watch.js], js);
 	gulp.watch([path.watch.img], images);
