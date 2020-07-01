@@ -1,86 +1,139 @@
  @@include('webp.js')
 
- $(document).ready(function () {
-   $('.slider').slick({
-     arrows: false,
-     dots: true,
-     inifnite: true,
-     autoplay: true,
-     autoplaySpeed: 30000,
-   });
+ $(document).ready(function() {
+             $('.slider').slick({
+                 arrows: false,
+                 dots: true,
+                 inifnite: true,
+                 autoplay: true,
+                 autoplaySpeed: 30000,
+             });
 
-   $('.slider-review').slick({
-     arrows: false,
-     dots: true,
-     inifnite: true,
-     autoplay: true,
-     autoplaySpeed: 3000,
-   })
+             $('.slider-review').slick({
+                 arrows: false,
+                 dots: true,
+                 inifnite: true,
+                 autoplay: true,
+                 autoplaySpeed: 3000,
+             })
 
-   // Скрипт для часов в футере -------------------------------------------------------------
-   setInterval(function () {
-     var hours = new Date().getUTCHours() + 7;
-     var mins = new Date().getUTCMinutes();
-     var hdegree = hours * 30 + mins / 2;
-     var hrotate = "rotate(" + hdegree + "deg)";
-     $("#hour").css({
-       "-moz-transform": hrotate,
-       "-webkit-transform": hrotate,
-     });
-   }, 1000);
+             $('.slider-clients').slick({
+                     arrows: false,
+                     dots: true,
+                     inifnite: true,
+                     autoplay: true,
+                     autoplaySpeed: 3000,
+                     slidesToShow: 6,
+                     slidesToScroll: 6,
+                     responsive: [{
+                             breakpoint: 1080,
+                             settings: {
+                                 slidesToShow: 5,
+                                 slidesToScroll: 5,
+                                 infinite: true,
+                                 dots: true
+                             }
+                         },
+                         {
+                             breakpoint: 900,
+                             settings: {
+                                 slidesToShow: 4,
+                                 slidesToScroll: 4
+                             }
+                         },
+                         {
+                             breakpoint: 768,
+                             settings: {
+                                 slidesToShow: 3,
+                                 slidesToScroll: 3
+                             }
+                         },
+                                                  {
+                             breakpoint: 414,
+                             settings: {
+                                 slidesToShow: 2,
+                                 slidesToScroll: 2
+                             }
+                         },
+                                                  {
+                             breakpoint: 370,
+                             settings: {
+                                 slidesToShow: 1,
+                                 slidesToScroll: 1
+                             }
+                         }
 
-   setInterval(function () {
-     var mins = new Date().getUTCMinutes();
-     var mdegree = mins * 6;
-     var mrotate = "rotate(" + mdegree + "deg)";
+                         ]
+                     })
 
-     $("#min").css({
-       "-moz-transform": mrotate,
-       "-webkit-transform": mrotate,
-     });
-   }, 1000);
+                 // Скрипт для часов в футере -------------------------------------------------------------
+                 setInterval(function() {
+                     var hours = new Date().getUTCHours() + 7;
+                     var mins = new Date().getUTCMinutes();
+                     var hdegree = hours * 30 + mins / 2;
+                     var hrotate = "rotate(" + hdegree + "deg)";
+                     $("#hour").css({
+                         "-moz-transform": hrotate,
+                         "-webkit-transform": hrotate,
+                     });
+                 }, 1000);
 
-   setInterval(function () {
-     var hours = new Date().getUTCHours() - 8;
-     var mins = new Date().getUTCMinutes();
-     var hdegree = hours * 30 + mins / 2;
-     var hrotate = "rotate(" + hdegree + "deg)";
+                 setInterval(function() {
+                     var mins = new Date().getUTCMinutes();
+                     var mdegree = mins * 6;
+                     var mrotate = "rotate(" + mdegree + "deg)";
 
-     $("#hour2").css({
-       "-moz-transform": hrotate,
-       "-webkit-transform": hrotate,
-     });
-   }, 1000);
+                     $("#min").css({
+                         "-moz-transform": mrotate,
+                         "-webkit-transform": mrotate,
+                     });
+                 }, 1000);
 
-   setInterval(function () {
-     var mins = new Date().getMinutes();
-     var mdegree = mins * 6;
-     var mrotate = "rotate(" + mdegree + "deg)";
+                 setInterval(function() {
+                     var hours = new Date().getUTCHours() - 8;
+                     var mins = new Date().getUTCMinutes();
+                     var hdegree = hours * 30 + mins / 2;
+                     var hrotate = "rotate(" + hdegree + "deg)";
 
-     $("#min2").css({
-       "-moz-transform": mrotate,
-       "-webkit-transform": mrotate,
-     });
-   }, 1000);
+                     $("#hour2").css({
+                         "-moz-transform": hrotate,
+                         "-webkit-transform": hrotate,
+                     });
+                 }, 1000);
 
- });
+                 setInterval(function() {
+                     var mins = new Date().getMinutes();
+                     var mdegree = mins * 6;
+                     var mrotate = "rotate(" + mdegree + "deg)";
+
+                     $("#min2").css({
+                         "-moz-transform": mrotate,
+                         "-webkit-transform": mrotate,
+                     });
+                 }, 1000);
+
+             });
 
 
+// Аккордеон 
+      $('.item__trigger').click(function(){
+        $(this).next('.item__content').slideToggle()
+        $(this).parent('.accordion__item').toggleClass('trigger-active')
+      })
 
- // Кнопка управления запуском видео
-  var controls = {
-    video: $("#myvideo"),
-    playpause: $("#playpause"),
-  };
-  var video = controls.video[0];
-  controls.playpause.click(function () {
-    if (video.paused) {
-      video.play();
-      document.getElementById("playpause").style.opacity = "0";
-    } else {
-      video.pause();
-      document.getElementById("playpause").style.opacity = "1";
-    }
+         // Кнопка управления запуском видео
+         var controls = {
+             video: $("#myvideo"),
+             playpause: $("#playpause"),
+         };
+         var video = controls.video[0]; controls.playpause.click(function() {
+             if (video.paused) {
+                 video.play();
+                 document.getElementById("playpause").style.opacity = "0";
+             } else {
+                 video.pause();
+                 document.getElementById("playpause").style.opacity = "1";
+             }
 
-    $(this).toggleClass("paused");
-  });
+             $(this).toggleClass("paused");
+         });

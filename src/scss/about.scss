@@ -3,7 +3,7 @@
     &__ourteam {
         max-width: 1180px;
         width: 100%;
-        margin: 0 auto;
+        margin: 50px auto;
 
         .allteam {
             display: flex;
@@ -29,15 +29,20 @@
 
         .ourteam-body {
             display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
 
             .item {
                 display: flex;
                 flex-direction: column;
+                max-width: 295px;
+                margin: 20px 0;
                 width: 100%;
                 align-items: center;
 
                 &__img {
-                    max-width: 296px;
+                    max-width: 295px;
                     width: 100%;
                     height: 300px;
                     border: 1px solid grey;
@@ -75,7 +80,7 @@
     &__our-values {
         max-width: 1180px;
         width: 100%;
-        margin: 0 auto;
+        margin: 50px auto;
 
         h2 {
             text-align: center;
@@ -89,12 +94,14 @@
 
         .our-values-body {
             display: flex;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
         .card {
             max-width: 385px;
             width: 100%;
+            padding:20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -111,11 +118,201 @@
 
             &__text {
                 margin-top: 25px;
-                font-size: 17px;
+                font-size: 14px;
                 color: $greycolor3;
                 text-align: center;
             }
 
         }
     }
+
+    &__ourclients {
+        max-width: 1180px;
+        width:100%;
+
+        .slider-clients {
+            width:100%;
+
+            &__item {
+
+
+                .item-body {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 195px;
+                    position: relative;
+                    height: 200px;
+                    border: 1px solid grey;
+                    justify-content: center;
+                    padding: 20px;
+                    transition: 0.5s;
+
+                    img {
+                        max-width: 100%;
+                        margin: auto;
+                    }
+
+                    .svg-right {
+                        display: flex;
+                        justify-content: flex-end;
+                        position: absolute;
+                        bottom: 10px;
+                        right: 10px;
+                    }
+
+                    &:hover {
+                        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                                        }
+
+                }
+            }
+
+            /* Слайдер */
+            .slick-slider {}
+
+            /* Слайдер запущен */
+            .slick-slider.slick-initialized {}
+
+            /* Слайдер с точками */
+            .slick-slider.slick-dotted {}
+
+            /* Ограничивающая оболочка */
+            .slick-list {
+                overflow: hidden;
+            }
+
+            /* Лента слайдов */
+            .slick-track {
+                display: flex;
+            }
+
+            /* Слайд */
+            .slick-slide {
+                outline: none;
+            }
+
+            /* Слайд активный (показывается) */
+            .slick-slide.slick-active {}
+
+            /* Слайд основной */
+            .slick-slide.slick-current {}
+
+            /* Слайд по центру */
+            .slick-slide.slick-center {}
+
+            /* Клонированный слайд */
+            .slick-slide.slick-cloned {}
+
+            /* Стрелка */
+            .slick-arrow {}
+
+            /* Стрелка влево */
+            .slick-arrow.slick-prev {}
+
+            /* Стрелка вправо */
+            .slick-arrow.slick-next {}
+
+            /* Стрелка не активная */
+            .slick-arrow.slick-disabled {}
+
+            /* Точки (булиты) */
+            .slick-dots {
+                display: flex;
+                justify-content: center;
+            }
+
+            .slick-dots li {
+                list-style: none;
+
+                margin: 20px 5px
+            }
+
+            /* Активная точка */
+            .slick-dots li.slick-active button {
+                background-color: $mainorange;
+
+            }
+
+            /* Элемент точки */
+            .slick-dots li button {
+                font-size: 0;
+                display: flex;
+                width: 10px;
+                height: 10px;
+                background-color: $greycolor3;
+                border-radius: 50%;
+
+            }
+        }
+    }
+
+    &__wantwork {
+        max-width: 900px;
+        width: 100%;
+        margin: 50px auto;
+
+        h2 {
+            text-align: center;
+            font-size: 28px;
+            margin: 50px 0;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: $greycolor3;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: 400;
+            color: $greycolor3;
+        }
+
+        .wantwork-cards {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                margin: 20px 0;
+                box-shadow: 4px 14px 27px rgba(0, 0, 0, 0.22);
+                padding: 10px;
+
+                .item__img {
+                    padding: 10px;
+                }
+
+                .item__title {
+                    padding: 10px;
+
+                    h4 {
+                        text-align: center;
+                        font-size: 22px;
+                        margin: 10px 0;
+                        font-weight: 400;
+                        color: $greycolor3;
+                    }
+                }
+
+                .item__btn {
+                    padding: 10px;
+
+                    a {
+                        background-color: $mainorange;
+                        text-decoration: none;
+                        color: $white;
+                        padding: 20px 50px;
+                        font-size: 18px;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+
 }
