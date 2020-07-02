@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet" />
+    <title>Bauart Web Solution</title>
+</head>
+
+<body>
+    @@include('_header.html')
+    <main class="main">
+        <div class="main__head-whoweare">
+            <h2>FREQUENTLY ASKED QUESTIONS</h2>
+            <p> We've compiled a list of commonly asked questions for your convenience. If you are unable to find the answer to your question, please contact us for further assistance. You can also browse the topics below to find what you are looking for.
+            </p>
+        </div>
+        <a href="#body" class="popup__area"></a>
+        <div class="main__questions">
+            <div class="questions--tabs">
+                <div class="tabs--item is-active tab-1">
+                    GENERAL
+                </div>
+                <div class="tabs--item tab-2">
+                    WEBSITE
+                </div>
+                <div class="tabs--item tab-3">
+                    BRANDING
+                </div>
+                <div class="tabs--item tab-4">
+                    APP
+                </div>
+                <div class="tabs--item tab-5">
+                    SEO
+                </div>
+            </div>
+    </main>
+    <footer class="footer">
+        @@include('_footer.html')
+        <div class="footer__copyright">
+            <div class="container-min links-block">
+                <p> Copyright © 2009-2019 - BAUART WEB SOLUTIONS / All Rights Reserverd.</p>
+                <p>Privacy Policy</p>
+            </div>
+        </div>
+    </footer>
+    @@include('_modal.html')
+    @@include('_scripts.html')
+</body>
+
+</html>
