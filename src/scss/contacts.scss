@@ -1,0 +1,67 @@
+.main {
+    &__lets-block {
+        margin: 100px auto;
+        max-width: 1180px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .item {
+            max-width: 350px;
+            box-shadow: $shadow;
+            padding: 40px;
+            text-align: center;
+            margin: 0 40px 0 0;
+
+            &__title {
+                font-size: 18px;
+                font-weight: 100;
+                color: $greycolor3;
+            }
+
+            &__text {
+                font-size: 14px;
+                margin: 30px 0;
+                font-weight: 100;
+                color: $greycolor3;
+            }
+
+            .icon-text-element {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                margin: 50px 0;
+
+                img {
+                    max-width: 45px;
+                    width: 100%;
+                    margin-right: 30px;
+                }
+
+                p {
+                    font-size: 14px;
+                    font-weight: 100;
+                    color: $greycolor3;
+                }
+            }
+        }
+    }
+
+    &__ouroffice {
+        margin: 20px auto;
+        max-width: 1180px;
+        width: 100%;
+        text-align: center;
+
+        h2 {
+            color: $greycolor3;
+            font-size: 36px;
+             margin: 20px auto;
+        }
+
+        .map {
+            position: relative;
+        }
+
+    }
+}

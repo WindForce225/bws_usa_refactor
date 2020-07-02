@@ -111,17 +111,36 @@
                          "-webkit-transform": mrotate,
                      });
                  }, 1000);
-
              });
+
 
 
 // Аккордеон 
       $('.item__trigger').click(function(){
         $(this).next('.item__content').slideToggle()
         $(this).parent('.accordion__item').toggleClass('trigger-active')
+      });
+      $('.tabs--item').click(function(){
+        $('.tabs--item').removeClass('is-active');
+        $(this).toggleClass('is-active');
+        let currentClass = $(this).attr("class").slice(15,16);
+        $('.questions--accordion').removeClass('tab-content-active');
+        $('.tab-content-' + currentClass).addClass('tab-content-active')
+
       })
 
-         // Кнопка управления запуском видео
+// Модалка на странице команды
+$('.popup-open').click(function(){
+  $(this).next('.item__popup').fadeIn();
+})
+
+ //Страница портфолио
+  $(".portfolio_card").hover(function () {
+    $(this).parent().find(".content_portfolio_card").toggleClass("active");
+  });
+
+
+// Кнопка управления запуском видео
          var controls = {
              video: $("#myvideo"),
              playpause: $("#playpause"),
