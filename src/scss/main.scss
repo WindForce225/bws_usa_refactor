@@ -1018,11 +1018,21 @@ button {
                 cursor: pointer;
                 background-color: $mainorange;
                 color: $white;
+
+                @media only screen and(max-width:374px) {
+                    padding: 10px;
+                }
+
             }
 
             .tabs--item {
                 padding: 20px;
                 cursor: pointer;
+
+
+                @media only screen and(max-width:374px) {
+                    padding: 10px;
+                }
 
 
 

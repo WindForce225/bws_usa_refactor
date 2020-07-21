@@ -178,18 +178,21 @@
     }
 
     &__comment-card {
-        margin:150px 0;
+        margin: 150px 0;
 
-        h3{
-            text-align:left;
-            margin:10px 0;
+        h3 {
+            text-align: left;
+            margin: 10px 0;
         }
-        .img_serv{
-            padding:10px;
-            img{
-                max-width:100%;
+
+        .img_serv {
+            padding: 10px;
+
+            img {
+                max-width: 100%;
             }
         }
+
         .comment_card {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -208,17 +211,19 @@
             margin: 20px 0;
             text-align: left;
             width: 100%;
+            font-size: 18px;
         }
 
-        .text_aboutcomment a{
+        .text_aboutcomment a {
             text-align: right;
-            color:$mainorange;
-            text-decoration:none;
+            color: $mainorange;
+            text-decoration: none;
         }
-        .read_more_tags_article_box{
-            display:flex;
-            justify-content:flex-end;
-            width:100%;
+
+        .read_more_tags_article_box {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
         }
 
     }

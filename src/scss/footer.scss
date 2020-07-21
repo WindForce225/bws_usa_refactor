@@ -147,11 +147,14 @@
     &__copyright {
         background-color: $color2;
         color: $white;
+        font-size: 12px;
 
         .links-block {
             display: flex;
             justify-content: space-between;
-            padding: 20px 0;
+            padding: 20px 10px;
+            flex-wrap: wrap;
+
         }
     }
 }
