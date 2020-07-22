@@ -1,0 +1,274 @@
+// блок с карточками
+.main__card-block {
+  max-width: 1180px;
+  width: 100%;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+
+  @media only screen and(max-width:1023px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &--item {
+    box-shadow: $shadow;
+    max-width: 350px;
+    width: 100%;
+    padding: 60px;
+
+    @media only screen and(max-width:1023px) {
+      margin: 0 10px;
+    }
+
+    .item__title {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 18px;
+      color: $greycolor3;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .item__content {
+      margin: 20px 0;
+
+      a {
+        color: $greycolor3;
+        font-size: 17px;
+        font-weight: 300;
+        margin: 10px 0;
+        text-transform: uppercase;
+      }
+
+    }
+  }
+}
+
+// блок с текстом и ссылкой на сайт
+.main__summary {
+  max-width: 1180px;
+  width: 100%;
+  margin: 50px auto;
+
+  &--title {
+    h3 {
+      font-size: 36px;
+      color: $greycolor3;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  &--text {
+    margin: 40px 0;
+    padding: 0 30px;
+
+    p {
+      color: $greycolor3;
+      font-size: 17px;
+      text-align: center;
+    }
+  }
+
+  &--link {
+    display: flex;
+    justify-content: center;
+
+    a {
+      background-color: $mainorange;
+      color: $white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 18px;
+      padding: 15px 30px;
+    }
+  }
+}
+
+// slider
+
+.main__slider-project {
+  max-width: 1180px;
+  width: 100%;
+  margin: 50px auto;
+
+}
+
+.slider-project {
+  position: relative;
+
+
+  &__item {
+    max-width: 500px;
+    width: 100%;
+
+    img {
+      max-width: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  /* Слайдер */
+  .slick-slider {}
+
+  /* Слайдер запущен */
+  .slick-slider.slick-initialized {}
+
+  /* Слайдер с точками */
+  .slick-slider.slick-dotted {}
+
+
+  /* Ограничивающая оболочка */
+  .slick-list {
+    overflow: hidden;
+    padding: 0;
+  }
+
+  /* Лента слайдов */
+  .slick-track {
+    display: flex;
+  }
+
+  /* Слайд */
+  .slick-slide {
+    outline: none;
+    opacity: 0.6;
+  }
+
+  .slick-current {
+    opacity: 1;
+    max-width: 550px;
+    width: 100%;
+  }
+
+  /* Слайд активный (показывается) */
+  .slick-slide.slick-active {}
+
+  /* Слайд основной */
+  .slick-slide.slick-current {}
+
+  /* Слайд по центру */
+  .slick-slide.slick-center {}
+
+  /* Клонированный слайд */
+  .slick-slide.slick-cloned {}
+
+  /* Стрелка */
+  .slick-arrow {}
+
+  /* Стрелка влево */
+  .slick-arrow.slick-prev {}
+
+  /* Стрелка вправо */
+  .slick-arrow.slick-next {}
+
+  /* Стрелка не активная */
+  .slick-arrow.slick-disabled {}
+
+  /* Точки (булиты) */
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+  }
+
+  .slick-dots li {
+    list-style: none;
+
+    margin: 20px 5px
+  }
+
+  /* Активная точка */
+  .slick-dots li.slick-active button {
+    background-color: $mainorange;
+
+  }
+
+  /* Элемент точки */
+  .slick-dots li button {
+    font-size: 0;
+    display: flex;
+    width: 10px;
+    height: 10px;
+    background-color: $greycolor3;
+    border-radius: 50%;
+
+  }
+}
+
+// slider related project
+.main__slider-related {
+  max-width: 1180px;
+  width: 100%;
+  margin: 50px auto;
+
+  .block__item {
+    max-width: 393px;
+    width: 100%;
+    height: 393px;
+
+    @media only screen and(max-width:1023px) {
+      height: auto;
+    }
+
+    &--content {
+      background: linear-gradient(to top, rgba(237, 91, 94, .9), rgba(255, 159, 85, .9));
+      background-size: 100% 100%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: 0.5s;
+
+      @media only screen and(max-width:1023px) {
+        padding: 20px;
+      }
+
+      @media only screen and(max-width:767px) {
+        padding: 50px 20px;
+      }
+
+      .content__title h5 {
+        font-size: 36px;
+        color: $white;
+        margin: 20px 0;
+
+        @media only screen and(max-width:1023px) {
+          font-size: 18px;
+        }
+      }
+
+      .content__text p {
+        color: $white;
+        margin: 20px 0;
+        font-size: 18px;
+        text-align: center;
+
+      }
+
+      .content__btn {
+        margin: 20px 0;
+      }
+
+      .content__btn a {
+        color: $white;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        border: 2px solid $white;
+        padding: 10px 15px;
+      }
+
+      &:hover {
+        opacity: 1;
+
+      }
+
+
+    }
+  }
+}

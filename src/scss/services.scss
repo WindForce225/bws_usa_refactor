@@ -16,7 +16,6 @@
 
         .howwework-body {
             display: flex;
-            justify-content: center;
 
             @media only screen and(max-width: 900px) {
                 flex-direction: column;
@@ -26,13 +25,18 @@
             &__item {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                justify-content: center;
                 max-width: 300px;
+                width: 100%;
                 height: 300px;
 
                 p {
                     text-align: center;
+
+                }
+
+                .item-img {
+                    display: flex;
+                    justify-content: center;
                 }
 
                 .item-number {
@@ -48,11 +52,13 @@
                     margin: 15px 0;
                     font-weight: lighter;
                     color: $greycolor3;
+                    text-align: center;
                 }
 
                 .item-text {
                     color: $greycolor3;
                     font-size: 17px;
+                    text-align: center;
                 }
             }
         }
@@ -70,28 +76,40 @@
             justify-content: center;
 
             &__item {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
                 padding: 15px;
                 max-width: 330px;
                 height: 420px;
                 box-shadow: 10px 10px 20px -3px grey;
                 margin: 30px;
+
+                .cardsection__item--title {
+                    display: flex;
+                    justify-content: center;
+
+                    h4 {
+                        font-weight: lighter;
+                        font-size: 18px;
+                        margin-bottom: 47px;
+                        color: $greycolor3;
+                    }
+                }
+
+                .cardsection__item--img {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .cardsection__item--text {
+                    p {
+                        margin: 20px 0;
+                        text-align: center;
+                        font-size: 14px;
+                    }
+                }
             }
 
-            h4 {
-                font-weight: lighter;
-                font-size: 18px;
-                margin-bottom: 47px;
-                color: $greycolor3;
-            }
 
-            p {
-                margin: 20px 0;
-                text-align: center;
-                font-size: 14px;
-            }
+
         }
     }
 
@@ -104,12 +122,27 @@
 
         .column_sevices {
             width: 100%;
+            margin: 0 auto;
             display: -webkit-box;
             display: -ms-flexbox;
             display: grid;
-            grid-template-areas: "post-1 post-3 post-4"
+            grid-template-areas:
+                "post-1 post-3 post-4"
                 "post-1 post-5 post-7"
                 "post-2 post-6 post-7";
+
+            @media only screen and(max-width:767px) {
+                grid-template-areas:
+                    "post-1"
+                    "post-1"
+                    "post-2"
+                    "post-3"
+                    "post-5"
+                    "post-6"
+                    "post-4"
+                    "post-7"
+                    "post-7";
+            }
         }
 
         .link-services {
@@ -128,6 +161,26 @@
             cursor: pointer;
             height: 250px;
             width: 393px;
+
+            @media only screen and(max-width:1239px) {
+                height: 225px;
+                width: 333px;
+            }
+
+            @media only screen and(max-width:1023px) {
+                height: 225px;
+                width: 250px;
+            }
+
+            @media only screen and(max-width:767px) {
+                height: 261px;
+                width: 350px;
+            }
+
+            @media only screen and(max-width:374px) {
+                height: 261px;
+                width: 300px;
+            }
         }
 
         .photo-card:nth-of-type(1) {
@@ -168,6 +221,10 @@
         .photo-card:first-child,
         .photo-card:last-child {
             height: 500px;
+
+            @media only screen and(max-width:1239px) {
+                height: 450px;
+            }
         }
 
         .column_sevices a {

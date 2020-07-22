@@ -24,43 +24,33 @@ $(document).ready(function () {
         slidesToShow: 6,
         slidesToScroll: 6,
         responsive: [{
-                breakpoint: 1080,
+                breakpoint: 1239,
                 settings: {
                     slidesToShow: 5,
-                    slidesToScroll: 5,
-                    infinite: true,
-                    dots: true
+                    slidesToScroll: 5
                 }
             },
             {
-                breakpoint: 900,
+                breakpoint: 1023,
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 4
                 }
             },
             {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3
-                }
-            },
-            {
-                breakpoint: 414,
+                breakpoint: 767,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2
                 }
             },
             {
-                breakpoint: 370,
+                breakpoint: 413,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
                 }
             }
-
         ]
     })
 
@@ -72,45 +62,33 @@ $(document).ready(function () {
         autoplaySpeed: 3000,
         slidesToShow: 3,
         slidesToScroll: 1,
-        // responsive: [{
-        //         breakpoint: 1080,
-        //         settings: {
-        //             slidesToShow: 5,
-        //             slidesToScroll: 5,
-        //             infinite: true,
-        //             dots: true
-        //         }
-        //     },
-        //     {
-        //         breakpoint: 900,
-        //         settings: {
-        //             slidesToShow: 4,
-        //             slidesToScroll: 4
-        //         }
-        //     },
-        //     {
-        //         breakpoint: 768,
-        //         settings: {
-        //             slidesToShow: 3,
-        //             slidesToScroll: 3
-        //         }
-        //     },
-        //     {
-        //         breakpoint: 414,
-        //         settings: {
-        //             slidesToShow: 2,
-        //             slidesToScroll: 2
-        //         }
-        //     },
-        //     {
-        //         breakpoint: 370,
-        //         settings: {
-        //             slidesToShow: 1,
-        //             slidesToScroll: 1
-        //         }
-        //     }
+        responsive: [{
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }]
+    })
 
-        // ]
+    $('.slider-project').slick({
+        centerMode: true,
+        arrows: false,
+        dots: true,
+        inifnite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [{
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+
+        ]
     })
 
     // Скрипт для часов в футере -------------------------------------------------------------
@@ -160,6 +138,21 @@ $(document).ready(function () {
     }, 1000);
 });
 
+
+
+// функция открытия закрытия popup окна команды
+$('.item__popup-open').click(function () {
+    $(this).parent().find('.item__popup').fadeIn()
+})
+$('.item__popup-close').click(function () {
+    // console.log($(this).parent().parent().parent());
+    $(this).parent().parent().parent().find('.item__popup').fadeOut();
+})
+
+$('.item__popup-area').click(function () {
+    // console.log($(this).parent().parent().parent());
+    $(this).parent().parent().find('.item__popup').fadeOut();
+})
 
 
 // Аккордеон 

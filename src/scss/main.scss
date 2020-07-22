@@ -468,6 +468,8 @@ button {
 
 // стили блока с заголовком  и текстом
 .main {
+    padding: 0 10px;
+
     &__head-whoweare {
         max-width: 1180px;
         width: 100%;
@@ -588,6 +590,11 @@ button {
 
         .body-video {
             position: relative;
+
+            video {
+                width: 100%;
+                height: auto;
+            }
 
             .play-btn {
                 max-width: 30%;
@@ -794,14 +801,24 @@ button {
 
 
 
-                        @media only screen and(max-width: 768px) {
+                        @media only screen and(max-width: 1023px) {
+                            width: 92%;
+                            left: 4%;
+                        }
+
+                        @media only screen and(max-width: 767px) {
                             width: 82%;
+                            left: 6%;
                         }
 
                     }
 
                     &__item {
                         margin-right: 5px;
+
+                        @media only screen and(max-width: 1114px) {
+                            margin-right: 1px;
+                        }
 
                         .rd-btn {
                             display: none;
