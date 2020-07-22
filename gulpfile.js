@@ -194,7 +194,7 @@ function css() {
 		)
 		.pipe(
 			autoprefixer({
-				overrideBrowserslist: ["last 3 versions"],
+				overrideBrowserslist: ["last 36 versions"],
 				cascade: false
 			})
 		)
@@ -250,7 +250,7 @@ function clean(params) {
 	return del(path.clean);
 }
 
-let build = gulp.series(clean, gulp.parallel(js, js2, video, css, fonts, html, template, images), fontsStyle);
+let build = gulp.series(clean, gulp.parallel(js, js2, video, css, fonts, html, template, images));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.template = template;

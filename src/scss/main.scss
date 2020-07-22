@@ -220,7 +220,8 @@ button {
                 font-size: 14px;
             }
 
-            .block-p {
+            .block-p,
+            .block-p2 {
                 display: none;
                 position: absolute;
                 right: 0;
@@ -368,7 +369,9 @@ button {
             }
 
             .dropdown:hover .block-p,
-            .block-p:hover {
+            .dropdown-2:hover .block-p2,
+            .block-p:hover,
+            .block-p2:hover {
                 display: flex;
                 visibility: visible;
                 opacity: 1;
